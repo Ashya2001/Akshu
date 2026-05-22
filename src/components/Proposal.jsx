@@ -43,6 +43,7 @@ function Proposal() {
     });
 
     setTimeout(() => {
+
       canvasConfetti({
         particleCount: 180,
         angle: 60,
@@ -56,6 +57,7 @@ function Proposal() {
         spread: 90,
         origin: { x: 1 }
       });
+
     }, 300);
   };
 
@@ -104,15 +106,19 @@ function Proposal() {
             {/* Typing */}
 
             <h2 className="typing">
-              Some souls are written in destiny ✨
+              Kuch rishte kismat me likhe hote hain ✨
             </h2>
 
             {/* Love Text */}
 
             <p className="love-msg">
-              In a world full of temporary moments,
+              Is badalti duniya me,
               <br />
-              your smile became my forever.
+              tumhari muskaan meri
+              <br />
+              hamesha rehne wali khushi
+              <br />
+              ban gayi hai ❤️
             </p>
 
             {/* Shayari */}
@@ -129,6 +135,7 @@ function Proposal() {
                 Akshu...
                 <br />
                 tu rahegi dil ki sabse
+                <br />
                 khoobsurat wajah ❤️"
               </p>
 
@@ -137,7 +144,9 @@ function Proposal() {
             {/* Question */}
 
             <h3 className="question">
-              Akshu, will you stay with me forever? 💖
+              Akshu... kya tum hamesha
+              <br />
+              mera saath dogi? 💖
             </h3>
 
             {/* Buttons */}
@@ -148,7 +157,7 @@ function Proposal() {
                 className="yes-btn"
                 onClick={handleYes}
               >
-                Yes My Love 💍
+                Haan Mera Pyaar 💍
               </button>
 
               <button
@@ -159,7 +168,7 @@ function Proposal() {
                   transform: `translate(${noPos.x}px, ${noPos.y}px)`
                 }}
               >
-                No 😅
+                Nahi 😅
               </button>
 
             </div>
@@ -174,7 +183,7 @@ function Proposal() {
             <FaHeart className="success-heart" />
 
             <h1>
-              She Said YES 💖
+              Usne Haan Keh Di 💖
             </h1>
 
             <h2>
@@ -182,19 +191,21 @@ function Proposal() {
             </h2>
 
             <p>
-
               "Mohabbat lafzon se nahi,
               <br />
               ehsaason se likhi jati hai...
               <br />
-              Aur kuch kahaniyan
+              aur kuch kahaniyan
               <br />
-              hamesha ke liye ban jati hain ❤️"
-
+              hamesha ke liye
+              <br />
+              ban jati hain ❤️"
             </p>
 
             <h3>
-              Our Forever Starts Here ✨
+              Hamari Kahani
+              <br />
+              Yahin Se Shuru Hoti Hai ✨
             </h3>
 
           </div>
