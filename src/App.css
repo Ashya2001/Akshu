@@ -4,20 +4,26 @@
   box-sizing:border-box;
 }
 
+html,
 body{
+  width:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
   font-family:"Poppins",sans-serif;
-  overflow:hidden;
+  background:#08080c;
 }
 
-/* Background */
+/* PAGE */
 
 .proposal-page{
   min-height:100vh;
+  width:100%;
   display:flex;
   justify-content:center;
   align-items:center;
   position:relative;
-  overflow:hidden;
+
+  padding:50px 15px;
 
   background:
   linear-gradient(
@@ -31,7 +37,7 @@ body{
   background-repeat:no-repeat;
 }
 
-/* Floating Hearts */
+/* HEARTS */
 
 .hearts{
   position:absolute;
@@ -46,68 +52,34 @@ body{
   animation:float 10s linear infinite;
 }
 
-.heart:nth-child(odd){
-  left:15%;
-  font-size:22px;
-}
-
-.heart:nth-child(even){
-  left:80%;
-  font-size:30px;
-}
-
 @keyframes float{
+
   from{
     transform:translateY(100vh) rotate(0deg);
     opacity:0;
   }
+
   to{
     transform:translateY(-100px) rotate(360deg);
     opacity:1;
   }
 }
 
-/* Premium Card */
+/* CARD */
 
 .glass-card{
-  width:90%;
+
+  width:100%;
   max-width:760px;
+
   padding:45px;
+
   border-radius:35px;
+
   position:relative;
   text-align:center;
+
   color:white;
-  overflow:hidden;
-
-  backdrop-filter:blur(18px);
-  background:rgba(15,15,20,.42);
--webkit-backdrop-filter:blur(20px);
-backdrop-filter:blur(20px);
-
-  border:1px solid rgba(255,255,255,.18);
-
-  box-shadow:
-  0 15px 45px rgba(0,0,0,.5),
-  inset 0 0 25px rgba(255,255,255,.08);
-
-  transition:.5s;
-}
-
-.glass-card:hover{
-  transform:translateY(-5px);
-}
-
-/* Animated Border */
-
-.glass-card{
-  width:90%;
-  max-width:760px;
-  padding:45px;
-  border-radius:35px;
-  position:relative;
-  text-align:center;
-  color:white;
-  overflow:hidden;
 
   background:rgba(15,15,20,.38);
 
@@ -124,20 +96,40 @@ backdrop-filter:blur(20px);
   transition:.5s;
 }
 
-/* Glow */
+.glass-card:hover{
+  transform:translateY(-5px);
+}
+
+/* GLOW */
 
 .glow-circle{
   width:180px;
   height:180px;
   background:#ff2f75;
   filter:blur(90px);
+
   position:absolute;
+
   top:-60px;
   right:-50px;
+
   opacity:.5;
 }
 
-/* Text */
+/* TOP ICONS */
+
+.top-icons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+
+  margin-bottom:20px;
+
+  font-size:28px;
+  color:#ff9bc0;
+}
+
+/* TITLE */
 
 .main-title{
   font-size:55px;
@@ -145,28 +137,43 @@ backdrop-filter:blur(20px);
   text-shadow:0 0 25px rgba(255,60,120,.8);
 }
 
+/* TYPING */
+
 .typing{
   color:#ffd6e6;
   margin-bottom:25px;
+
   overflow:hidden;
   white-space:nowrap;
+
   border-right:2px solid #fff;
+
   display:inline-block;
+
   animation:
   typing 4s steps(35) infinite,
   blink .7s infinite;
 }
 
 @keyframes typing{
-  from{width:0}
-  to{width:100%}
+
+  from{
+    width:0;
+  }
+
+  to{
+    width:100%;
+  }
 }
 
 @keyframes blink{
+
   50%{
     border-color:transparent;
   }
 }
+
+/* MESSAGE */
 
 .love-msg{
   font-size:21px;
@@ -174,18 +181,28 @@ backdrop-filter:blur(20px);
   color:#ffe6ef;
 }
 
-/* Shayari */
+/* SHAYARI */
 
 .shayari-box{
+
   margin-top:25px;
+
   padding:22px;
+
   border-radius:22px;
+
   background:rgba(255,255,255,.06);
+
   border:1px solid rgba(255,255,255,.08);
+
   color:#fff1f7;
+
   line-height:2;
+
   box-shadow:0 0 20px rgba(255,255,255,.05);
 }
+
+/* QUESTION */
 
 .question{
   margin-top:30px;
@@ -193,27 +210,43 @@ backdrop-filter:blur(20px);
   color:#fff;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .btn-box{
-  margin-top:35px;
+  margin-top:40px;
   position:relative;
   height:120px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+
+  flex-wrap:wrap;
 }
+
+/* COMMON */
 
 .yes-btn,
 .no-btn{
+
   border:none;
+
   padding:15px 38px;
+
   border-radius:50px;
+
   font-size:18px;
+
   cursor:pointer;
+
   transition:.4s;
 }
 
-/* Yes */
+/* YES */
 
 .yes-btn{
+
   background:linear-gradient(
   45deg,
   #ff2f75,
@@ -226,18 +259,26 @@ backdrop-filter:blur(20px);
   0 0 25px rgba(255,70,130,.6);
 
   position:relative;
+
   overflow:hidden;
 }
 
 .yes-btn::before{
+
   content:"";
+
   position:absolute;
+
   width:50px;
   height:200%;
+
   background:rgba(255,255,255,.3);
+
   left:-70px;
   top:-40px;
+
   transform:rotate(25deg);
+
   transition:.7s;
 }
 
@@ -246,31 +287,39 @@ backdrop-filter:blur(20px);
 }
 
 .yes-btn:hover{
+
   transform:scale(1.08);
+
   box-shadow:
   0 0 40px rgba(255,70,130,.9);
 }
 
-/* No */
+/* NO */
 
 .no-btn{
+
   background:white;
+
   color:#ff2f75;
+
   position:absolute;
+
   box-shadow:0 0 15px rgba(255,255,255,.3);
 }
 
-/* Success */
+/* SUCCESS */
 
 .success{
   animation:pop .8s ease;
 }
 
 @keyframes pop{
+
   from{
     transform:scale(.7);
     opacity:0;
   }
+
   to{
     transform:scale(1);
     opacity:1;
@@ -278,12 +327,16 @@ backdrop-filter:blur(20px);
 }
 
 .success-heart{
+
   color:#ff3d7e;
+
   font-size:70px;
+
   animation:beat 1s infinite;
 }
 
 @keyframes beat{
+
   50%{
     transform:scale(1.25);
   }
@@ -304,12 +357,16 @@ backdrop-filter:blur(20px);
   color:#ffd4e5;
 }
 
-/* Mobile */
+/* MOBILE */
 
-@media(max-width:600px){
+@media(max-width:768px){
+
+  .proposal-page{
+    padding:30px 15px;
+  }
 
   .glass-card{
-    padding:28px;
+    padding:28px 22px;
   }
 
   .main-title{
@@ -317,7 +374,10 @@ backdrop-filter:blur(20px);
   }
 
   .typing{
-    font-size:16px;
+    font-size:15px;
+    white-space:normal;
+    border-right:none;
+    animation:none;
   }
 
   .love-msg{
@@ -330,7 +390,15 @@ backdrop-filter:blur(20px);
 
   .yes-btn,
   .no-btn{
-    font-size:16px;
-    padding:12px 28px;
+    font-size:15px;
+    padding:12px 25px;
+  }
+
+  .btn-box{
+    height:140px;
+  }
+
+  .success h1{
+    font-size:32px;
   }
 }
