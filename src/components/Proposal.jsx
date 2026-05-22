@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 import canvasConfetti from "canvas-confetti";
+
 import {
   FaHeart,
   FaGem,
   FaRing,
   FaStar
 } from "react-icons/fa";
+
 import "../App.css";
 
 function Proposal() {
 
   const [accepted, setAccepted] = useState(false);
+
   const [noPos, setNoPos] = useState({
     x: 0,
     y: 0
   });
 
-  /* No button move */
+  /* Move No Button */
 
   const moveNo = () => {
 
-    const x = Math.random() * 260 - 130;
-    const y = Math.random() * 160 - 80;
+    const x = Math.random() * 220 - 110;
+    const y = Math.random() * 120 - 60;
 
-    setNoPos({
-      x,
-      y
-    });
+    setNoPos({ x, y });
   };
 
-  /* Premium Confetti */
+  /* Yes Click */
 
   const handleYes = () => {
 
@@ -62,12 +62,15 @@ function Proposal() {
   };
 
   return (
+
     <div className="proposal-page">
 
       {/* Floating Hearts */}
 
       <div className="hearts">
+
         {[...Array(18)].map((_, i) => (
+
           <FaHeart
             key={i}
             className="heart"
@@ -77,7 +80,9 @@ function Proposal() {
               fontSize: `${18 + Math.random() * 20}px`
             }}
           />
+
         ))}
+
       </div>
 
       {/* Main Card */}
@@ -89,6 +94,7 @@ function Proposal() {
         {!accepted ? (
 
           <>
+
             {/* Top Icons */}
 
             <div className="top-icons">
@@ -109,7 +115,7 @@ function Proposal() {
               Kuch rishte kismat me likhe hote hain ✨
             </h2>
 
-            {/* Love Text */}
+            {/* Love Message */}
 
             <p className="love-msg">
               Is badalti duniya me,
@@ -172,11 +178,10 @@ function Proposal() {
               </button>
 
             </div>
+
           </>
 
         ) : (
-
-          /* Success */
 
           <div className="success">
 
@@ -211,7 +216,9 @@ function Proposal() {
           </div>
 
         )}
+
       </div>
+
     </div>
   );
 }
