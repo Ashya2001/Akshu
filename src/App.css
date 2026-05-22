@@ -1,0 +1,324 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Poppins",sans-serif;
+  overflow:hidden;
+}
+
+/* Background */
+
+.proposal-page{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+
+  background:
+  linear-gradient(rgba(8,8,12,.75),rgba(8,8,12,.82)),
+  url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2");
+
+  background-size:cover;
+  background-position:center;
+}
+
+/* Floating Hearts */
+
+.hearts{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.heart{
+  position:absolute;
+  color:rgba(255,70,130,.35);
+  animation:float 10s linear infinite;
+}
+
+.heart:nth-child(odd){
+  left:15%;
+  font-size:22px;
+}
+
+.heart:nth-child(even){
+  left:80%;
+  font-size:30px;
+}
+
+@keyframes float{
+  from{
+    transform:translateY(100vh) rotate(0deg);
+    opacity:0;
+  }
+  to{
+    transform:translateY(-100px) rotate(360deg);
+    opacity:1;
+  }
+}
+
+/* Premium Card */
+
+.glass-card{
+  width:90%;
+  max-width:760px;
+  padding:45px;
+  border-radius:35px;
+  position:relative;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+
+  backdrop-filter:blur(18px);
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.18);
+
+  box-shadow:
+  0 15px 45px rgba(0,0,0,.5),
+  inset 0 0 25px rgba(255,255,255,.08);
+
+  transition:.5s;
+}
+
+.glass-card:hover{
+  transform:translateY(-5px);
+}
+
+/* Animated Border */
+
+.glass-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:35px;
+  padding:2px;
+  background:linear-gradient(
+  45deg,
+  #ff2f75,
+  #ff9dc6,
+  #ff2f75
+  );
+  -webkit-mask:
+  linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  pointer-events:none;
+}
+
+/* Glow */
+
+.glow-circle{
+  width:180px;
+  height:180px;
+  background:#ff2f75;
+  filter:blur(90px);
+  position:absolute;
+  top:-60px;
+  right:-50px;
+  opacity:.5;
+}
+
+/* Text */
+
+.main-title{
+  font-size:55px;
+  margin-bottom:12px;
+  text-shadow:0 0 25px rgba(255,60,120,.8);
+}
+
+.typing{
+  color:#ffd6e6;
+  margin-bottom:25px;
+  overflow:hidden;
+  white-space:nowrap;
+  border-right:2px solid #fff;
+  display:inline-block;
+  animation:
+  typing 4s steps(35) infinite,
+  blink .7s infinite;
+}
+
+@keyframes typing{
+  from{width:0}
+  to{width:100%}
+}
+
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
+
+.love-msg{
+  font-size:21px;
+  line-height:1.8;
+  color:#ffe6ef;
+}
+
+/* Shayari */
+
+.shayari-box{
+  margin-top:25px;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff1f7;
+  line-height:2;
+  box-shadow:0 0 20px rgba(255,255,255,.05);
+}
+
+.question{
+  margin-top:30px;
+  font-size:30px;
+  color:#fff;
+}
+
+/* Buttons */
+
+.btn-box{
+  margin-top:35px;
+  position:relative;
+  height:120px;
+}
+
+.yes-btn,
+.no-btn{
+  border:none;
+  padding:15px 38px;
+  border-radius:50px;
+  font-size:18px;
+  cursor:pointer;
+  transition:.4s;
+}
+
+/* Yes */
+
+.yes-btn{
+  background:linear-gradient(
+  45deg,
+  #ff2f75,
+  #ff7eb3
+  );
+
+  color:white;
+
+  box-shadow:
+  0 0 25px rgba(255,70,130,.6);
+
+  position:relative;
+  overflow:hidden;
+}
+
+.yes-btn::before{
+  content:"";
+  position:absolute;
+  width:50px;
+  height:200%;
+  background:rgba(255,255,255,.3);
+  left:-70px;
+  top:-40px;
+  transform:rotate(25deg);
+  transition:.7s;
+}
+
+.yes-btn:hover::before{
+  left:120%;
+}
+
+.yes-btn:hover{
+  transform:scale(1.08);
+  box-shadow:
+  0 0 40px rgba(255,70,130,.9);
+}
+
+/* No */
+
+.no-btn{
+  background:white;
+  color:#ff2f75;
+  position:absolute;
+  box-shadow:0 0 15px rgba(255,255,255,.3);
+}
+
+/* Success */
+
+.success{
+  animation:pop .8s ease;
+}
+
+@keyframes pop{
+  from{
+    transform:scale(.7);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.success-heart{
+  color:#ff3d7e;
+  font-size:70px;
+  animation:beat 1s infinite;
+}
+
+@keyframes beat{
+  50%{
+    transform:scale(1.25);
+  }
+}
+
+.success h1{
+  font-size:45px;
+  margin:15px 0;
+}
+
+.success p{
+  line-height:2;
+  color:#ffe6ef;
+}
+
+.success h3{
+  margin-top:20px;
+  color:#ffd4e5;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+  .glass-card{
+    padding:28px;
+  }
+
+  .main-title{
+    font-size:36px;
+  }
+
+  .typing{
+    font-size:16px;
+  }
+
+  .love-msg{
+    font-size:17px;
+  }
+
+  .question{
+    font-size:22px;
+  }
+
+  .yes-btn,
+  .no-btn{
+    font-size:16px;
+    padding:12px 28px;
+  }
+}
