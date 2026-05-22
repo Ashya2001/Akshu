@@ -20,11 +20,15 @@ body{
   overflow:hidden;
 
   background:
-  linear-gradient(rgba(8,8,12,.75),rgba(8,8,12,.82)),
-  url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2");
+  linear-gradient(
+    rgba(8,8,12,.75),
+    rgba(8,8,12,.82)
+  ),
+  url("/bg.jpg");
 
   background-size:cover;
   background-position:center;
+  background-repeat:no-repeat;
 }
 
 /* Floating Hearts */
@@ -76,7 +80,9 @@ body{
   overflow:hidden;
 
   backdrop-filter:blur(18px);
-  background:rgba(255,255,255,.08);
+  background:rgba(15,15,20,.42);
+-webkit-backdrop-filter:blur(20px);
+backdrop-filter:blur(20px);
 
   border:1px solid rgba(255,255,255,.18);
 
